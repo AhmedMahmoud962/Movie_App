@@ -13,7 +13,17 @@ function App() {
     );
     setMovies(respose.data.results);
   };
-
+  // const getMovies = () => {
+  //   axios
+  //     .get("https://api.themoviedb.org/3/movie/popular?api_key=6a3a03b0fc3cbf98bd67aad57854a518&language=en-US")
+  //     .then((response) => {
+  //       console.log(response.data.results);
+  //       setMovies(response.data.results);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
   useEffect(() => {
     getMovies();
     console.log(movies);
