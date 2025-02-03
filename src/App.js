@@ -6,16 +6,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 function App() {
   const [movies, setMovies] = useState([]);
+  // get all movies by using axios
   const getMovies = async () => {
     const respose = await axios.get(
       "https://api.themoviedb.org/3/movie/popular?api_key=6a3a03b0fc3cbf98bd67aad57854a518&language=en-US"
     );
     setMovies(respose.data.results);
-    console.log(movies);
   };
 
   useEffect(() => {
     getMovies();
+    console.log(movies);
   }, []);
   return (
     <>
