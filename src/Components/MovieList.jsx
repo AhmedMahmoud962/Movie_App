@@ -8,6 +8,9 @@ const MoviesList = () => {
         The Movie List
       </h1>
       <MovieCard />
+      <MovieCard />
+      <MovieCard />
+      <MovieCard />
     </Row>
   )
 }
