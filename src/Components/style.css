@@ -132,3 +132,48 @@
     padding: 5px 10px;
   }
 }
+
+/* movie details */
+
+.card-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.img-movie {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+
+}
+
+.card-text-details {
+  font-size: 18px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .img-movie {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+}

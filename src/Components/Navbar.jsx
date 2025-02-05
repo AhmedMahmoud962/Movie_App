@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
-import logo from '../assets/1.jpg'
-const NavBar = ({searchMovie}) => {
+import logo from '../assets/logo.png'
+const NavBar = ({ searchMovie }) => {
   return (
     <div className="nav-style w-100">
       <Container>

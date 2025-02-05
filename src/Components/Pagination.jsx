@@ -17,7 +17,7 @@ const Pagination = ({ getPage }) => {
         pageRangeDisplayed={2}
         marginPagesDisplayed={2}
         pageCount={pageCount}
-        previousLabel="< السابق"
+        previousLabel=" < السابق"
         renderOnZeroPageCount={null}
         containerClassName="pagination"
         activeClassName="selected"
