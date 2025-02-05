@@ -52,12 +52,7 @@ body.dark-mode .no-data-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f4f4f4;
   padding: 30px 0;
-}
-
-body.dark-mode .pagination-container {
-  background-color: #222;
 }
 
 .pagination {
@@ -178,7 +173,8 @@ body.dark-mode .pagination .disabled a {
 .img-movie {
   width: 250px;
   height: auto;
-  border-radius: 20px;
+  border-radius: 20px !important;
+
 }
 
 .card-text-details {

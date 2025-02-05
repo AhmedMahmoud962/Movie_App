@@ -1,16 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 const NavBar = ({ searchMovie }) => {
-  const [darkMode, setDarkMode] = useState(false)
+  // Retrieve the dark mode state from localStorage on component mount
+  const savedDarkMode = localStorage.getItem('darkMode') === 'true'
+  const [darkMode, setDarkMode] = useState(savedDarkMode)
 
   // Change mode
   const toggleMode = () => {
-    setDarkMode(!darkMode)
-    document.body.classList.toggle('dark-mode')
+    const newMode = !darkMode
+    setDarkMode(newMode)
+
+    // Save the new mode to localStorage
+    localStorage.setItem('darkMode', newMode)
+
+    // Toggle dark mode class on the body
+    document.body.classList.toggle('dark-mode', newMode)
   }
+
+  // Apply the initial theme from localStorage on page load
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkMode)
+  }, [darkMode])
 
   return (
     <div className={`nav-style w-100 ${darkMode ? 'dark' : 'light'}`}>

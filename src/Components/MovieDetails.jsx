@@ -82,11 +82,11 @@ const MovieDetails = () => {
                 الصفحة الرئيسية
               </Link>
               {movie.homepage && (
-                <a href={movie.homepage} rel="noopener noreferrer">
+                <Link to={movie.homepage} rel="noopener noreferrer">
                   <button type="button" className="btn btn-primary me-1">
                     مشاهدة الفيلم
                   </button>
-                </a>
+                </Link>
               )}
             </div>
           </div>
