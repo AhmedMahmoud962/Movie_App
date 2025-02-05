@@ -1,50 +1,113 @@
-body {
-  margin: 0;
-  background-color: #111;
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --nav-bg-light: #7d8d8f;
+  --border-color-light: #ddd;
+
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #ffffff;
+  --nav-bg-dark: #111;
+  --border-color-dark: #555;
 }
 
-.color-body {
-  background-color: white;
-  height: 100vh;
+body {
+  margin: 0;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
 }
 
 .nav-style {
-  height: 90px;
-  width: 1440px;
-  background-color: #444;
+  background-color: var(--nav-bg-light);
+  padding: 10px 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .nav-style {
+  background-color: var(--nav-bg-dark);
 }
 
 .logo {
-  height: 60px;
-  width: 78px;
+  width: 60px;
+  height: auto;
 }
 
-.search {
+/* مربع البحث */
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
   position: relative;
+  background-color: var(--bg-color-light);
+  border-radius: 25px;
+  padding: 5px;
+  transition: background-color 0.3s;
+  border: none !important;
 }
 
-.search input {
-  height: 40px;
-  text-indent: 25px;
-  border-radius: 20px;
+body.dark-mode .search-box {
+  background-color: var(--bg-color-dark);
 }
 
-.search input:focus {
-  box-shadow: none;
-  border: 2px solid red;
-}
-
-.search .fa-search {
+.search-icon {
   position: absolute;
-  top: 12px;
-  left: 16px;
+  left: 15px;
+  color: var(--text-color-light);
+  transition: color 0.3s;
+  border: none !important;
 }
 
-.card {
-  position: relative;
-  transition: all 0.5s ease-in;
+body.dark-mode .search-icon {
+  color: var(--text-color-dark);
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px;
+  font-size: 18px;
+  border: none !important;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+.search-input::placeholder {
+  color: var(--text-color-light);
+}
+
+body.dark-mode .search-input::placeholder {
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .search-input {
+  border-color: var(--border-color-dark);
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.search-input:focus {
+  border-color: none !important;
+}
+
+.toggle-btn {
+  border: none;
+  background: none;
+  font-size: 30px !important;
   cursor: pointer;
-  height: 375px;
+  color: var(--text-color-light);
+  transition: color 0.3s;
+}
+
+body.dark-mode .toggle-btn {
+  color: var(--text-color-dark);
 }
 
 .card__image {
@@ -63,9 +126,8 @@ body {
   height: 100%;
   width: 100%;
   opacity: 0;
-  visibility: none;
   transition: 0.5s ease;
-  background-color: #393839;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .card:hover .card__overlay {
@@ -79,8 +141,6 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -94,16 +154,17 @@ body {
   background-color: #b45b35;
 }
 
-.card-detalis {
-  height: 370px;
+.card-detalis,
+.card-story {
   border-radius: 20px;
-  background-color: #f8f8f8;
+  background-color: var(--bg-color-light);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.card-story {
-  height: 300px;
-  border-radius: 20px;
-  background-color: #f8f8f8;
+body.dark-mode .card-detalis,
+body.dark-mode .card-story {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
 }
 
 .img-movie {
@@ -112,34 +173,15 @@ body {
   border-radius: 20px;
 }
 
-.card-text-details {
-  color: #555555;
-  font-family: Almarai;
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 0;
-  line-height: 49px;
-}
-
-.card-text-story {
-  color: #555555;
-  font-family: Almarai;
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 32px;
-}
-
+.card-text-details,
+.card-text-story,
 .card-text-title {
-  color: #555555;
-  font-family: Almarai;
-  font-size: 36px;
-  font-weight: bold;
-  letter-spacing: 0;
-  line-height: 49px;
+  color: var(--text-color-light);
+  transition: color 0.3s;
 }
 
-@media screen and (max-width: 768px) {
-  .logo {
-    display: none;
-  }
+body.dark-mode .card-text-details,
+body.dark-mode .card-text-story,
+body.dark-mode .card-text-title {
+  color: var(--text-color-dark);
 }

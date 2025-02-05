@@ -16,7 +16,7 @@ const MovieDetails = () => {
       )
       setMovie(response.data)
     } catch (error) {
-      console.error('حدث خطأ أثناء جلب بيانات الفيلم:', error)
+      console.error(error, 'Error getting movie details')
     }
   }
 
@@ -25,7 +25,7 @@ const MovieDetails = () => {
   }, [])
 
   if (!movie) {
-    return <h2 className="text-center mt-5">جارٍ تحميل البيانات...</h2>
+    return <h2 className="text-center mt-5">Loading...</h2>
   }
 
   return (
@@ -82,11 +82,7 @@ const MovieDetails = () => {
                 الصفحة الرئيسية
               </Link>
               {movie.homepage && (
-                <a
-                  href={movie.homepage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={movie.homepage} rel="noopener noreferrer">
                   <button type="button" className="btn btn-primary me-1">
                     مشاهدة الفيلم
                   </button>

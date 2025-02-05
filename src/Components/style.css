@@ -1,3 +1,4 @@
+/* No Data Container */
 .no-data-container {
   display: flex;
   flex-direction: column;
@@ -21,6 +22,14 @@
   color: #555;
 }
 
+body.dark-mode .no-data-text {
+  color: #fff;
+}
+
+body.dark-mode .no-data-container {
+  background-color: #121212;
+}
+
 /* Responsive Styling */
 @media (max-width: 768px) {
   .no-data-text {
@@ -38,13 +47,17 @@
   }
 }
 
-/* pagination */
+/* Pagination */
 .pagination-container {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f4f4f4;
   padding: 30px 0;
+}
+
+body.dark-mode .pagination-container {
+  background-color: #222;
 }
 
 .pagination {
@@ -56,6 +69,10 @@
   background: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   gap: 8px;
+}
+
+body.dark-mode .pagination {
+  background: #333;
 }
 
 .pagination li {
@@ -74,6 +91,10 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+body.dark-mode .pagination li a {
+  color: #007bff;
+}
+
 .pagination .selected a {
   background-color: #007bff;
   color: white !important;
@@ -82,6 +103,10 @@
 
 .pagination li:not(.selected):hover a {
   background-color: #e6f0ff;
+}
+
+body.dark-mode .pagination li:not(.selected):hover a {
+  background-color: #222;
 }
 
 .pagination .previous a,
@@ -93,6 +118,10 @@
 .pagination .disabled a {
   color: gray;
   pointer-events: none;
+}
+
+body.dark-mode .pagination .disabled a {
+  color: gray;
 }
 
 @media (max-width: 768px) {
@@ -133,8 +162,7 @@
   }
 }
 
-/* movie details */
-
+/* Movie Details */
 .card-details {
   display: flex;
   flex-direction: row;
@@ -151,7 +179,6 @@
   width: 250px;
   height: auto;
   border-radius: 20px;
-
 }
 
 .card-text-details {
@@ -162,7 +189,25 @@
 
 .border-bottom {
   border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+/* Dark Mode for Movie Details */
+body.dark-mode .card-details {
+  background: #2c2c2c;
+  color: #fff;
+}
+
+body.dark-mode .card-text-details {
+  color: #ccc;
+}
+
+body.dark-mode .card-details .border-bottom {
+  border-bottom: 1px solid #555;
+}
+
+body.dark-mode .card-details .img-movie {
+  border-radius: 10px;
 }
 
 /* Responsive Design */

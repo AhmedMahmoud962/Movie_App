@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import MoviesList from "./Components/MovieList";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MovieDetails from "./Components/MovieDetails";
 function App() {
   const [movies, setMovies] = useState([]);
@@ -58,21 +58,19 @@ function App() {
     <>
       <Navbar searchMovie={searchMovie} />
       <Container>
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <MoviesList
-                  movies={movies}
-                  getPage={getPage}
-                  pageCount={pageCount}
-                />
-              }
-            />
-            <Route path="/movie/:id" element={<MovieDetails />} />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <MoviesList
+                movies={movies}
+                getPage={getPage}
+                pageCount={pageCount}
+              />
+            }
+          />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
       </Container>
     </>
   );

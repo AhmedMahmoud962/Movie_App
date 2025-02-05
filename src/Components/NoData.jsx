@@ -5,7 +5,7 @@ const NoData = () => {
   return (
     <div className="no-data-container">
       <img src={ImagaNoData} alt="No Movies" className="no-data-image" />
-      <p className="no-data-text">No movies to display</p>
+      <p className="no-data-text">No Movies To Display</p>
     </div>
   )
 }
